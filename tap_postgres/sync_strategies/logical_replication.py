@@ -581,6 +581,7 @@ def sync_tables(conn_info, logical_streams, state, end_lsn, state_file):
                     int_to_lsn(start_lsn),
                     int_to_lsn(end_lsn),
                     slot)
+        LOGGER.info('logical streams: %s. wal2json tables: %s', logical_streams, streams_to_wal2json_tables(logical_streams))
         # psycopg2 2.8.4 will send a keep-alive message to postgres every status_interval
         cur.start_replication(slot_name=slot,
                               decode=True,
