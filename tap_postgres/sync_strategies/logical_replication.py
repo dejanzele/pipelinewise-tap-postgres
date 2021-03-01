@@ -608,6 +608,7 @@ def sync_tables(conn_info, logical_streams, state, end_lsn, state_file):
 
         try:
             msg = cur.read_message()
+            LOGGER.info('msg is %s', msg)
         except Exception as e:
             LOGGER.error(e)
             raise
