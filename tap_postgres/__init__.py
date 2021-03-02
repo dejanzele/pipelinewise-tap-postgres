@@ -30,8 +30,6 @@ REQUIRED_CONFIG_KEYS = [
     'password'
 ]
 
-psycopg2.extras.register_uuid()
-
 def do_discovery(conn_config):
     """
     Run discovery mode to find all potential streams in the db cluster
