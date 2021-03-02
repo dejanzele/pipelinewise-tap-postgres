@@ -30,6 +30,7 @@ REQUIRED_CONFIG_KEYS = [
     'password'
 ]
 
+psycopg2.extras.register_uuid()
 
 def do_discovery(conn_config):
     """
